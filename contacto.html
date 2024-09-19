@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Vuetify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.6.13/dist/vuetify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
+    <style>
+        /* .open-sans-web {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+        } */
+        :root{
+            --color-primary: #df3c22;
+            --color-primary-2: #115785;
+        }
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            margin: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            padding: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .o-nav{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            top:0;
+            z-index:9;
+            /* color: var(--color-primary)!important; */
+            background-color: #ffffff2e !important;
+            background-color: rgba(230, 230, 230, 0.45) !important;
+            border: none !important;
+            transition: all 0.25s ease-out;
+            &.topBanner{
+                background-color: rgba(230, 230, 230, 1) !important;
+            }
+        }
+        .o-footer{
+            /* position:sticky; */
+            bottom:0;
+            width:100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding:1rem;
+            font-size: 0.85rem;
+            text-align: center;
+            background-color: #e5e5e5;
+        }
+        .o-carrousel{
+            position: relative;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            &:after{
+                content: "";
+                position:absolute;
+                top:0;
+                bottom:0;
+                left:0;
+                right:0;
+                background-color: rgba(0, 0, 0, 0.1);
+                background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+                width: 100%;
+                height: 100%;
+            }
+            & .o-carrousel-content__image{
+                position:absolute;
+                width: 100%;
+            }
+            & .o-carrousel-content{
+                max-width: 400px;
+                position:relative;
+                z-index:2;
+                color: white;
+                margin: auto;
+                margin-right: 10%;
+            }
+        }
+
+        .c-btn{
+            text-decoration: none;
+            .c-btn__secondary{
+                /* background-color: var(--color-primary)!important; */
+            }
+
+            .c-btn__primary{
+                background-color: var(--color-primary)!important;
+            }
+        }
+
+        .p-menubar-item-link{
+            color: var(--color-primary-2)!important;
+            /* font-weight: 300; */
+        }
+        .link-active{
+            color: var(--color-primary)!important;
+            font-weight: bold;
+        }
+
+        .color--primary{
+            color: var(--color-primary)!important;
+        }
+
+        .bg-color--white{
+            background-color: #fff!important;
+        }
+
+        .color--whatsapp{
+            color: #25d366;
+        }
+        .color--facebook{
+            color: #3c5b9a;
+        }
+
+        .c-cursos{
+            text-align: center;
+            .c-cursos__icon{
+                font-size: 4rem;
+            }
+            .c-cursos__title{
+                /* font-size: 1.2rem; */
+                font-size:21px;
+                margin: 1rem auto;
+            }
+            .c-cursos__text{
+                margin: 1rem auto;
+                text-align: initial;
+            }
+        }
+
+        .min-height-600px{
+            min-height: 600px;
+        }
+        .height-100per{
+            height: 100%;
+        }
+
+        .c-container--align-items-center{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .c-niveles{
+            text-align: center;
+            background-color: rgba(250, 250, 250, 1);
+            border: 1px solid #f2f2f2;
+            border-radius: 12px;
+            .c-niveles__title{
+                color: var(--color-primary)!important;
+            }
+            .c-niveles__text{
+                margin: 1rem auto;
+                text-align: initial;
+            }
+            .c-niveles__content{
+                padding: 1.5rem;
+            }
+            .c-niveles__horario{
+                margin: 2rem auto;
+                text-align: center;
+            }
+            .c-niveles__icon{
+                font-size: 24px;
+            }
+            .c-niveles__btn{
+                color: #333!important;
+                border: 2px solid var(--color-primary)!important;
+            }
+        }
+
+        .c-section__descubre-el-mundo-del-ingles{
+            background-image: url('./assets/img/English-Language-Statistics.jpg');
+            background-size: cover;
+            height: 100vh;
+            max-height: 600px;
+            align-items: center;
+            display: flex;
+            h2, p{
+                color: #fff;
+                background-color: rgba(250, 250, 250, 0.5);
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px 30px;
+                display: table;
+                clear: both;
+            }
+        }
+
+        .o-section-contacto{
+            background-image: url('./assets/img/contacto-bg.jpg');
+            background-size: cover;
+            /* height: 100vh; */
+            /* max-height: 600px; */
+            align-items: center;
+            display: flex;
+            .o-section-inscribete__card{
+                background-color: #fff;
+                border-radius: 8px;
+            }
+            .pi-thumbs-up{
+                font-size: 34px;
+                text-align:center;
+                margin: 1rem auto;
+            }
+        }
+
+        .flex-direction-column{
+            flex-direction: column;
+        }
+
+        .fs-24px{
+            font-size: 24px!important;
+        }
+        .fs-32px{
+            font-size: 32px!important;
+        }
+        
+        .fs-50px{
+            font-size: 50px!important;
+        }
+
+        .o-section-contacto-form{
+            background-color: #fff;
+            padding: 2rem;
+            margin: 8rem auto 2rem;
+            border-radius: 6px;
+            border: 1px solid var(--color-primary);
+            .o-section-contacto-form__send-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 50%;
+                width: 7rem;
+                height: 7rem;
+                font-size: 4rem;
+                margin: auto;
+                margin-top: -5rem;
+                color: var(--color-primary)!important;
+            }
+            .o-section-contacto-form__title{
+                color: var(--color-primary)!important;
+            }
+            .o-section-contacto-form__btn{
+                background-color: var(--color-primary)!important;
+            }
+            small{
+                color: var(--color-primary)!important;
+                font-size: 0.8rem;
+            }
+            .p-inputtext,
+            .p-textarea{
+                background-color: #fafafa;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- <MyComponent/> -->
+</div>
+
+    <script type="importmap">
+        { "imports": {
+            "vue":        "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.esm-browser.prod.js",
+            "vue-router": "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.1.5/vue-router.esm-browser.min.js",
+            "Vuetify":    "https://cdn.jsdelivr.net/npm/vuetify@3.6.13/dist/vuetify.min.js",
+            "PrimeVue":    "https://unpkg.com/primevue/umd/primevue.min.js"
+        } }
+    </script>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/vuetify@3.6.13/dist/vuetify.min.js"></script> -->
+      <script src="https://unpkg.com/primevue/umd/primevue.min.js"></script>
+      <script src="https://unpkg.com/@primevue/themes/umd/aura.min.js"></script>
+      <!-- <script src="https://unpkg.com/@primevue/themes/umd/lara.min.js"></script>
+      <script src="https://unpkg.com/@primevue/themes/umd/nora.min.js"></script> -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- <script type="module">
+        import indexComponent from './js/index_component.js'
+    </script> -->
+    <script>
+        const { createApp, ref } = Vue;
+        // console.log({indexComponent})
+        // import { createVuetify } from 'Vuetify'
+        // const { createVuetify } = Vuetify;
+        // const vuetify = createVuetify()
+        // import { createVuetify } from 'https://cdn.jsdelivr.net/npm/vuetify@3.6.13/dist/vuetify.min.js'
+        // import PrimeVue from 'https://unpkg.com/primevue/umd/primevue.min.js';
+        // import indexComponent from './js/index_component.js'
+        // const app = createApp(indexComponent)
+
+        function checkNavScroll() {
+            const NAV_BAR = document.querySelector('.o-nav');
+            const SCROLL_MARGIN_TOP = 50;
+            if (document.body.scrollTop > SCROLL_MARGIN_TOP || document.documentElement.scrollTop > SCROLL_MARGIN_TOP) {
+                // console.log(NAV_BAR.scrollTop);
+                NAV_BAR.classList.add('topBanner');
+            } else {
+                NAV_BAR.classList.remove('topBanner');
+            }
+        }
+        /* Eventos */
+        document.addEventListener('DOMContentLoaded', checkNavScroll, false);
+        window.addEventListener("scroll", function() {
+            checkNavScroll();
+        });
+
+        const app = createApp({
+            setup() {
+                const date = ref();
+                return {
+                    date
+                };
+            },
+            components: {
+                // indexComponent
+            },
+            data(){
+                return {
+                    form: {},
+                    products: [
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Basic',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Basic Plus',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Intermediate',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Intermediate plus',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Advance',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Advance plus',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Proficiency',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                        {
+                            id: '1000',
+                            code: 'f230fh0g3',
+                            name: 'Proficiency  plus',
+                            description: 'Aprende e inicia en el idioma inglés con los cursos básicos.',
+                            image: './assets/img/images.jfif',
+                            schedule: 'Lunes a viernes. 1 hr.',
+                            price: 65,
+                            category: 'Accessories',
+                            quantity: 24,
+                            inventoryStatus: 'INSTOCK',
+                            rating: 5
+                        },
+                    ],
+                    items: [
+                        /* {
+                            label: '',
+                            icon: 'pi pi-home',
+                        }, */
+                        {
+                            label: 'Inicio',
+                            icon: 'pi pi-home',
+                            href: '/index',
+                        },
+                        /* {
+                            label: 'Comunicate con nosotros',
+                        }, */
+                        {
+                            label: 'Cursos de inglés',
+                            href: '/cursos',
+                        },
+                        {
+                            label: 'Certificaciones',
+                            href: '/certificaciones',
+                        },
+                        /* {
+                            label: 'Precios',
+                        }, */
+                        {
+                            label: 'Contacto',
+                            icon: 'pi pi-envelope',
+                            class: 'link-active',
+                        }
+                    ],
+                    
+                    responsiveOptions: [
+                        {
+                            breakpoint: '1400px',
+                            numVisible: 2,
+                            numScroll: 1
+                        },
+                        {
+                            breakpoint: '1199px',
+                            numVisible: 3,
+                            numScroll: 1
+                        },
+                        {
+                            breakpoint: '767px',
+                            numVisible: 2,
+                            numScroll: 1
+                        },
+                        {
+                            breakpoint: '575px',
+                            numVisible: 1,
+                            numScroll: 1
+                        }
+                    ],
+                }
+            },
+            template: `
+            <div id="Inicio" class="main">
+                <Menubar class="o-nav" :model="items">
+                    <template #start>
+                        <img src="./assets/img/qt=q_95.webp" alt="Wordy" width="auto" height="24">
+                    </template>
+                    <template #item="{ item, props, hasSubmenu, root }">
+                        <a class="flex items-center" :href="item.href" :class="item.class" v-bind="props.action">
+                            <span :class="item.icon" />
+                            <span class="ml-2">{{ item.label }}</span>
+                            <!-- <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" /> -->
+                            <span v-if="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
+                            <i v-if="hasSubmenu" :class="['pi pi-angle-down', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"></i>
+                        </a>
+                    </template>
+                    <!-- <template #end>
+                        <div class="flex items-center gap-2">
+                            <InputText placeholder="Search" type="text" class="w-32 sm:w-auto" />
+                            <Avatar image="/images/avatar/amyelsner.png" shape="circle" />
+                        </div>
+                    </template> -->
+                </Menubar>
+
+                <section class="c-section o-section-contacto">
+                    <div class="container pt-6">
+                        <div class="row justify-content-center">
+                            
+                            <div class="col-lg-5 col-md-8 ">
+                                <form action="testphpmailer.php" method="post" class="o-section-contacto-form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="pi pi-send color--whatsapp o-section-contacto-form__send-icon"></span>
+                                            <h2 class="c-section-title o-section-contacto-form__title text-center mb-4">Contáctanos</h2>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-md-6 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column text-center gap-2">
+                                                <span class="pi pi-whatsapp fs-32px color--whatsapp"></span>
+                                                <label for="nombre" class="lh-1">5573531971</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column text-center gap-2">
+                                                <span class="pi pi-facebook fs-32px color--facebook"></span>
+                                                <label for="nombre" class="lh-1">/wordy</label>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-md-6 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column gap-2">
+                                                <label for="nombre" class="lh-1">Nombre *</label>
+                                                <InputText id="nombre" name="nombre" v-model="form.nombre" aria-describedby="nombre-help" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column gap-2">
+                                                <label for="Apellidos" class="lh-1">Apellidos *</label>
+                                                <InputText id="Apellidos" name="apellidos" v-model="form.apellidos" aria-describedby="apellidos-help" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column gap-2">
+                                                <label for="email" class="lh-1">Email *</label>
+                                                <InputText id="email" name="email" v-model="form.email" aria-describedby="apellidos-help" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column gap-2">
+                                                <label for="telefono" class="lh-1">Teléfono *</label>
+                                                <InputText id="telefono" name="telefono" v-model="form.telefono" aria-describedby="apellidos-help" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 mb-4">
+                                            <div class="d-flex flex-colum flex-direction-column gap-2">
+                                                <label for="mensaje" class="lh-1">Mensaje</label>
+                                                <Textarea id="mensaje" name="mensaje" v-model="form.mensaje" autoResize rows="5" cols="30" />
+                                            </div>
+                                            <small id="username-help" class="color--red">* Campos requeridos.</small>
+                                        </div>
+
+                                        <div class="col-md-12 mt-0 text-right">
+                                            <Button class="c-btn c-btn__primary px-6 o-section-contacto-form__btn" type="submit" rounded>Enviar</Button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                
+                <div class="o-footer">
+                    <span class="o-footer-copyright">Copyright © 2024 WORDY - Todos los derechos reservados.</span>
+                    <img class="o-footer-paypal" src="./assets/img/paypal.jpg" alt="Paypal" width="auto" height="24">
+                </div>
+            </div>
+            `
+        });
+        app.use(PrimeVue.Config, {
+            theme: {
+                preset: PrimeVue.Themes.Aura,
+                options: {
+                    prefix: 'p',
+                    // darkModeSelector: 'system',
+                    darkModeSelector: '.my-app-dark',
+                    cssLayer: false
+                }
+            }
+        });
+        // app.component('Datepicker', PrimeVue.DatePicker);
+        app.component('Menubar', PrimeVue.Menubar);
+        app.component('Button', PrimeVue.Button);
+        // app.component('Carousel', PrimeVue.Carousel);
+        app.component('InputText', PrimeVue.InputText);
+        app.component('Textarea', PrimeVue.Textarea);
+        app.mount('#app')
+    </script>
+    <!-- <script src="/js/app.js" type="module"></script> -->
+</body>
+</html>
